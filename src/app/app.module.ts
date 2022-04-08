@@ -14,8 +14,7 @@ import { SearchComponent } from './components/Search/Search.component';
 import { AffichageComponent } from './components/Affichage/Affichage.component';
 import { DetailComponent} from "./components/detail/detail.component";
 import {Routing} from "./app.routing";
-// @ts-ignore
-import { StartComponent } from './Components/start/start.component';
+import { StartComponent} from "./components/start/start.component";
 
 
 @NgModule({
