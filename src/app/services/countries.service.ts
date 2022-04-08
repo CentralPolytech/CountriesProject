@@ -1,22 +1,47 @@
 import { Injectable } from '@angular/core';
-import { Country } from '../model/country';
-import { COUNTRIES } from 'src/data/countries';
+import { Router } from '@angular/router';
+import { Observable, of} from 'rxjs';
+import { Interface } from '../Interface/Interface';
+import { COUNTRIES } from '../data/countries';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CountriesService {
+  countries = COUNTRIES;
+  selected:Interface | null = null;
+  filtered : Interface[] = [];
+  filteredByContinent: Interface[]= [];
 
-  private countries: Country[] = []
+  constructor(private router: Router) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
-
+  getCountries(name: string): Observable<any[]>{
+    if (name.trim() == ''){
+      return of (this.countries);
+    }
+    else{
+    this.filtered = this.countries.filter((pays) => {
+      return pays?.name?.common?.toLowerCase().includes(name.toLowerCase());
+    });
+    return of (this.filtered);
+    }
   }
-  getCountries(){
-    this.countries= COUNTRIES;
-    return this.countries;
+
+  parContinent(continent: string): Observable<any[]>{
+    this.countries = COUNTRIES;
+    this.router.navigate(['/pays', continent]);
+    this.filteredByContinent = this.countries.filter((country)=>{
+      return country.region?.toLowerCase() === continent.toLowerCase();
+    })
+    this.countries = this.filteredByContinent;
+    return of (this.countries);
   }
 
+  setCountry(country : Interface){
+    this.selected = country;
+  }
+
+  getCountry(){
+    return this.selected;
+  }
 }

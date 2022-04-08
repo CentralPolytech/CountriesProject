@@ -1,4 +1,5 @@
-export const COUNTRIES = [
+import {Interface} from '../Interface/Interface'
+export const COUNTRIES : Interface[] = [
   {
     name: {
       common: 'Montenegro',
@@ -8802,9 +8803,9 @@ export const COUNTRIES = [
   }, {
     name: {
       common: 'Curaçao',
-      official: 'Country of Curaçao',
+      official: 'Interface of Curaçao',
       nativeName: {
-        eng: {official: 'Country of Curaçao', common: 'Curaçao'},
+        eng: {official: 'Interface of Curaçao', common: 'Curaçao'},
         nld: {official: 'Land Curaçao', common: 'Curaçao'},
         pap: {official: 'Pais Kòrsou', common: 'Pais Kòrsou'}
       }
@@ -8819,14 +8820,14 @@ export const COUNTRIES = [
     currencies: {ANG: {name: 'Netherlands Antillean guilder', symbol: 'ƒ'}},
     idd: {root: '+5', suffixes: ['99']},
     capital: ['Willemstad'],
-    altSpellings: ['CW', 'Curacao', 'Kòrsou', 'Country of Curaçao', 'Land Curaçao', 'Pais Kòrsou'],
+    altSpellings: ['CW', 'Curacao', 'Kòrsou', 'Interface of Curaçao', 'Land Curaçao', 'Pais Kòrsou'],
     region: 'Americas',
     subregion: 'Caribbean',
     languages: {eng: 'English', nld: 'Dutch', pap: 'Papiamento'},
     translations: {
       ara: {official: 'دولة كوراساو', common: 'كوراساو'},
       ces: {official: 'Autonomní země Curaçao', common: 'Curaçao'},
-      cym: {official: 'Country of Curaçao', common: 'Curaçao'},
+      cym: {official: 'Interface of Curaçao', common: 'Curaçao'},
       deu: {official: 'Land Curaçao', common: 'Curaçao'},
       est: {official: 'Curaçao', common: 'Curaçao'},
       fin: {official: 'Curaçao', common: 'Curaçao'},
